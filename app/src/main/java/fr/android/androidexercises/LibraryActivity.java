@@ -16,6 +16,7 @@ public class LibraryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         TextView messageTextView = (TextView) findViewById(R.id.messageTextView);
+        messageTextView.setText(R.string.greetings);
         // TODO call setText() on messageTextView
 
         setSupportActionBar(toolbar);
