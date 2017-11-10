@@ -2,24 +2,29 @@ package fr.android.androidexercises
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import android.support.v7.widget.GridLayoutManager
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_library.*
+import java.util.*
+
 
 class LibraryActivity : AppCompatActivity() {
+
+    private val random = Random()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-
-        val messageTextView = findViewById<View>(R.id.messageTextView) as TextView
-        // TODO call setText() on messageTextView
-
-        setSupportActionBar(toolbar)
+        bookListView.layoutManager = GridLayoutManager(this, if (resources.getBoolean(R.bool.landscape)) 2 else 1)
+        bookListView.adapter = BookAdapter(LayoutInflater.from(this), getBooks())
     }
+
+    private fun getBooks(): List<Book> = (0..99).map {
+        Book("Garry Potier Tome $it", random.nextInt(30).toFloat())
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
