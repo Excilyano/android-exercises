@@ -1,7 +1,12 @@
 package fr.android.androidexercises;
 
-public interface HenriPotierService {
 
-    // TODO Method GET books which return a List<Book>
+import java.util.List;
+import retrofit2.Call;
+import retrofit2.http.GET;
+
+public interface HenriPotierService {
+    @GET("books")
+    Call<List<Book>> listBooks();
 
 }
