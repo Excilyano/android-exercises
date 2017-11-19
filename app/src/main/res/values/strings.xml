@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">Library</string>
+    <string name="app_name">Book Library</string>
     <string name="action_settings">Settings</string>
+    <string name="img_content_description">Book image</string>
 
-    <string name="greetings">C\'est un gamin !</string>
+    <string name="no_book_selected">Please select a book</string>
+
+    <!-- Application constants -->
+    <string name="url">http://henri-potier.xebia.fr/</string>
+    <string name="book_key">BOOK</string>
+    <string name="books_key">BOOKS</string>
 </resources>
